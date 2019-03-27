@@ -1,14 +1,20 @@
 # Family Management Web App
 
-**What is it?**  
-One-stop-shop for all your family organizational needs. Helps families manage household to-dos (chores), bills, finances and schedules so everyone is on the same page.  
-The app will tie into your Google account which will set calendar reminders to alert you on your phone.  
+One-stop-shop for all your family organizational needs. Helps families manage household to-dos (chores), bills, finances and schedules so everyone is on the same page.
+
+The app will tie into your Google account which will set calendar reminders to alert you on your phone.
+
 Set goals for your family and remember to treat yourself when a goal is met.
 
+## New Techs Planned to be used
+- Sass
+- Google Calendar API
+
+## Database Type
+- Mongo / Mongoose
 
 
-
-
+### App Sections 
 **Household To-Dos**  
 Create a household to-do list and categorize them by priority/task-size.
 
