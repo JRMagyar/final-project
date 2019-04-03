@@ -1,10 +1,10 @@
 import React from "react";
-import FlexWrap from "../../components/FlexWrap/index";
+import { FlexCol } from "../../components/FlexWrap/index";
 import "./style.css"
 
 function Login(){
     return (
-        <FlexWrap>
+        <FlexCol>
             <article className="title-area">
                 <h1>
                     household <br></br> 
@@ -12,7 +12,7 @@ function Login(){
                 </h1>
             </article>
             <article class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></article>
-        </FlexWrap>
+        </FlexCol>
     );
 }
 

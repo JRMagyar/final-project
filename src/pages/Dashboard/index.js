@@ -1,26 +1,27 @@
 import React from "react";
-import FlexWrap from "../../components/FlexWrap/index";
-import "./style.css"
+import "./style.css";
+import MediaQuery from 'react-responsive';
+import { FlexRow, FlexCol } from "../../components/FlexWrap/index";
 
 function Dashboard(){
     return (
-        <div id="root">
-            <FlexWrap>
+        <FlexCol>
+            <FlexRow>
                 <article className="calendar">
                     area for calendar
                 </article>
                 <article className="note-list">
                     notification list
                 </article>
-            </FlexWrap>
-            <FlexWrap>
+            </FlexRow>
+            {/* <FlexRow>
                 <article id="expenses">expenses</article>
                 <article id="finances">finances</article>
                 <article id="schedules">schedules</article>
                 <article id="grocery">grocery</article>
                 <article id="event-plan">event planning</article>
-            </FlexWrap>
-        </div>
+            </FlexRow> */}
+        </FlexCol>
     );
 }
 

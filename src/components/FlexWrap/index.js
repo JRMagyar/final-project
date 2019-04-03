@@ -1,10 +1,14 @@
 import React from "react";
 import "./style.css"
 
-function FlexWrap({children}){
+export function FlexRow({children}){
     return (
-        <div className='flex-parent'>{children}</div>
+        <div className='flex-row'>{children}</div>
     )
 }
 
-export default FlexWrap;
+export function FlexCol({children}){
+    return (
+        <div className='flex-col'>{children}</div>
+    )
+}
