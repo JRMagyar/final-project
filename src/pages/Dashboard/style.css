@@ -1,0 +1,9 @@
+.calendar {
+    background-color: lightgray;
+    height: 50%;
+    width: 100%;
+}
+
+.note-list {
+    background-color: lightseagreen;
+}
