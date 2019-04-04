@@ -15,3 +15,6 @@ function Nav() {
 }
 
 export default Nav;
+
+/*This is the Google Signout "Button"
+<a href="#" onclick="signOut();">Sign out</a>*/

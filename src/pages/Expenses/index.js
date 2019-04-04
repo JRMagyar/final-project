@@ -3,7 +3,7 @@ import "./style.css";
 import MediaQuery from 'react-responsive';
 import { FlexRow, FlexCol } from "../../components/FlexWrap/index";
 
-function Dashboard(){
+function Expenses(){
     return (
         <MediaQuery minDeviceWidth={700}>
             {(matches) => {
@@ -31,4 +31,4 @@ function Dashboard(){
     );
 }
 
-export default Dashboard;
+export default Expenses;
