@@ -1,0 +1,21 @@
+.left-child-p {
+    background-color: lightgray;
+    height: 70vh;    
+    flex: 1;
+}
+
+.right-child-p {
+    background-color: lightseagreen;
+    height: 70vh;
+    flex: 2;
+}
+
+.calendar-area-mini {
+    background-color: rgb(202, 168, 168);
+    height: 65%;
+}
+
+.add-box {
+    background-color: rgb(126, 240, 240);
+    height: 35%;
+}
