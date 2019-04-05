@@ -1,13 +1,51 @@
+/* Start Style for Laptop View */
+
+.title-area {
+    background-color: lightgray;
+    height: 10%;
+    width: 80%;
+    margin: 0vh 2vh;
+    margin-top: 12vh;
+}
+
 .calendar {
+    flex: 2;
     background-color: lightgray;
     height: 70%;
-    width: 80%;
-    margin: 20pt;
+    margin: 2vh;
 }
 
 .note-list {
+    flex: 1;
     background-color: lightseagreen;
     height: 70%;
-    width: 20%;
-    margin: 20pt;
+    margin: 2vh;
 }
+
+/* End Style for Laptop View */
+
+/* Start Style for Mobil View */
+
+.title-areaM {
+    background-color: lightgray;
+    height: 5%;
+    width: 90%;
+    margin: 0vh 2vh;
+    margin-top: 12vh;
+}
+
+.calendarM {
+    background-color: lightgray;
+    height: 55%;
+    width: 90%;
+    margin: 2vh;
+}
+
+.note-listM {
+    background-color: lightseagreen;
+    height: 40%;
+    width: 90%;
+    margin: 2vh;
+}
+
+/* End Style for Mobil View */
