@@ -23,5 +23,5 @@
     "express": "^4.16.4",
     "mongoose": "^5.4.20"
   },
-  "homepage" : "https://guarded-lake-70417.herokuapp.com/"
+  "homepage": "https://guarded-lake-70417.herokuapp.com/"
 }

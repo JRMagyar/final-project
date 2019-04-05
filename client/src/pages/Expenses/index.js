@@ -3,26 +3,37 @@ import "./style.css";
 import MediaQuery from 'react-responsive';
 import { FlexRow, FlexCol } from "../../components/FlexWrap/index";
 
-function Expenses(){
+function Expenses(props){
     return (
         <MediaQuery minDeviceWidth={700}>
             {(matches) => {
                 if (matches) {
                     return  <FlexRow>
-                    <article className="calendar">
-                        area for calendar
+                    <article className="flex-child title-area">
+                        expenses title{/* {props.pagename} */}
                     </article>
-                    <article className="note-list">
-                        notification list
+                    <div className="flex-child left-child-p">
+                        <article className="calendar-area-mini">
+                            area for calendar
+                        </article>
+                        <article className="add-box">
+                            add item area
+                        </article>
+                    </div>
+                    <article className="flex-child right-child-p">
+                        expenses list (quick view / expand view / update & delete)
                     </article>
                     </FlexRow>
                 } else {
                     return  <FlexCol>
-                    <article className="calendar">
-                        area for calendar
+                    <article className="title-areaM">
+                        expenses title{/* {props.pagename} */}
                     </article>
-                    <article className="note-list">
-                        notification list
+                    <article className="calendarM">
+                        area for calendar / click to add
+                    </article>
+                    <article className="note-listM">
+                        expenses list
                     </article>
                     </FlexCol>
                 }

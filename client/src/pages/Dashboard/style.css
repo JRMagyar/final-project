@@ -1,13 +1,47 @@
-.calendar {
+/* Start Style for Laptop View */
+
+.title-area {
     background-color: lightgray;
-    height: 70%;
-    width: 80%;
-    margin: 20pt;
+    height: 10vh;
+    margin: 0vh 2vh 0vh 2vh;
+    margin-top: 12vh;
 }
 
-.note-list {
-    background-color: lightseagreen;
-    height: 70%;
-    width: 20%;
-    margin: 20pt;
+.left-child {
+    background-color: lightgray;
+    height: 70vh;
+    flex: 2;
 }
+
+.right-child {
+    background-color: lightseagreen;
+    height: 70vh;
+    flex: 1;
+}
+
+/* End Style for Laptop View */
+
+/* Start Style for Mobil View */
+
+.title-areaM {
+    background-color: lightgray;
+    height: 5vh;
+    width: 90%;
+    margin-top: 12vh;
+}
+
+.calendarM {
+    background-color: lightgray;
+    height: 55vh;
+    width: 90%;
+    margin: 2vh;
+}
+
+.note-listM {
+    background-color: lightseagreen;
+    height: 40vh;
+    width: 90%;
+    margin-bottom: 2vh;
+}
+
+/* End Style for Mobil View */
