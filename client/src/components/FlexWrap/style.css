@@ -1,0 +1,32 @@
+.flex-row {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flex-col {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flex-child {
+    display: flex;
+    flex-direction: column;
+    background-color: chartreuse;
+    height: 100vh;
+    margin: 2vh;
+}
+
+.flex-child:first-child {
+    width: 100%;
+}
+
+.flex-child:not(:first-child) {
+    /* flex: 1; */
+}
