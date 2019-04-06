@@ -2,8 +2,8 @@ const db = require("../models");
 
 module.exports = {
     findAll: function(req, res){
-        db.Household.
-        findOne({_id: req.params.id})
+        db.Household
+        .findOne({_id: req.params.id})
         .populate("schedules")
         .then(dbResults => res.json(dbResults))
         .catch(err => res.json(err));
