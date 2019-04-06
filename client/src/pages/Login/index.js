@@ -5,7 +5,7 @@ import "./style.css"
 function Login(){
     return (
         <FlexCol>
-            <article className="title-area">
+            <article className="login-area">
                 <h1>
                     household <br></br> 
                     management
