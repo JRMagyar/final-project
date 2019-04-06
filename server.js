@@ -60,6 +60,32 @@ app.get("/displayUsers/:id", function(req,res){
         console.log(err)
     })
 })
+
+app.post("/newFinance/:id", function(req, res){
+    db.Finance.create(req.body)
+    .then(function(dbFinance){
+        return db.Household.findOneAndUpdate({_id: req.params.id}, {$push:{finances: dbFinance._id}}, {new: true})
+    })
+    .then(function(newFinance){
+        res.json(newFinance)
+        console.log(newFinance)
+    })
+    .catch(function(err){
+        console.log(err);
+    })
+})
+app.get("/displayAll/:id", function(req,res){
+    db.Household.findOne({_id: req.params.id})
+    .populate("finances")
+    .populate("users")
+    .then(function(results){
+        res.json(results)
+        console.log(results)
+    })
+    .catch(function(err){
+        console.log(err)
+    })
+})
 //////////////////////////////////
 
 app.listen(PORT, function() {
