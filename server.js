@@ -19,11 +19,13 @@ if (process.env.NODE_ENV === "production") {
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fptesting");
 
+/////TESTING ROUTES/////
 app.get("/newHousehold/:name", function(req, res){
     let household = {}
     household.name = req.params.name
     db.Household.create(household)
         .then(function(dbHousehold){
+            res.json(dbHousehold)
             console.log(dbHousehold)
         })
         .catch(function(err){
@@ -34,23 +36,31 @@ app.get("/newHousehold/:name", function(req, res){
 app.post("/newUser/:id", function(req, res){
     db.User.create(req.body)
     .then(function(dbUser){
-        return db.Household.findOneAndUpdate({_id: req.params.id}, {$push:{Users: dbUser._id}}, {new: true})
+        return db.Household.findOneAndUpdate({_id: req.params.id}, {$push:{users: dbUser._id}}, {new: true})
     })
     .then(function(newUser){
+        res.json(newUser)
         console.log(newUser)
     })
     .catch(function(err){
         console.log(err);
     })
 })
-
 app.get("/displayUsers/:id", function(req,res){
     db.Household.findOne({_id: req.params.id})
-    .populate("Users")
+    .populate({
+        path: "users",
+        match: {username: "Julia"}
+    })
     .then(function(results){
+        res.json(results.users)
         console.log(results)
     })
+    .catch(function(err){
+        console.log(err)
+    })
 })
+//////////////////////////////////
 
 app.listen(PORT, function() {
     console.log("App running on port " + PORT);
