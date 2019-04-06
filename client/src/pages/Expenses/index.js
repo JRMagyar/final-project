@@ -3,6 +3,7 @@ import "./style.css";
 import MediaQuery from 'react-responsive';
 import { FlexRow, FlexCol } from "../../components/FlexWrap/index";
 
+
 function Expenses(props){
     return (
         <MediaQuery minDeviceWidth={700}>
@@ -18,6 +19,8 @@ function Expenses(props){
                         </article>
                         <article className="add-box">
                             add item area
+                            {/* click to expand the flex container */}
+
                         </article>
                     </div>
                     <article className="flex-child right-child-p">
