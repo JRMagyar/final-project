@@ -5,7 +5,7 @@ import Login from "./pages/Login/index";
 import Dashboard from "./pages/Dashboard/index";
 import Expenses from "./pages/Expenses/index";
 import Finances from "./pages/Finances/index";
-import Nav from "./components/NavBar/index"
+import Nav from "./components/NavBar/index";
 
 class App extends Component {
   render() {
