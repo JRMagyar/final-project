@@ -62,13 +62,23 @@ input {
     border-bottom: 1pt solid rgb(207, 207, 207);
 }
 
-input:focus {
+input:focus, input:hover {
+    transition: 250ms;
     outline-color: #00b377;
+    color: #00b377;
+    border-bottom: 1pt solid #00b377;
 }
 
 input[type=submit] {
+    text-align: center;
     background-color: #00b377;
     color: white;
     font-size: 16pt;
     border: none;
+}
+
+input[type=submit]:hover {
+    transition: 500ms;
+    cursor: pointer;
+    background-color: #008558;
 }
