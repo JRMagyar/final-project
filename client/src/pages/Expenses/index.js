@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import MediaQuery from 'react-responsive';
 import { FlexRow, FlexCol } from "../../components/FlexWrap/index";
-import { Box } from "../../components/AddSection/tryItWithFunctionOnly.js";
+import AddSection from "../../components/AddSection/index";
 
 
 function Expenses(props) {
@@ -17,15 +17,17 @@ function Expenses(props) {
                         <div className="flex-child left-child-p">
                             <article className="calendar-area-mini">
                                 area for calendar
+                                
                         </article>
-                            <article className="add-box" onClick={ Box }>
-                                
+                        <AddSection/>
+                            {/* <article className="add-box">
+                                ADD BOX
+                                {/* // add item area */}
 
-                                    {/* // add item area */}
-                                
-                                {/* click to expand the flex container */}
+                                {/* click to expand the flex container 
 
-                            </article>
+                            </article> */}
+
                         </div>
                         <article className="flex-child right-child-p">
                             expenses list (quick view / expand view / update & delete)

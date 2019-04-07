@@ -1,76 +1,53 @@
 import React from "react";
 import "./style.css"
 
-// const divStyle = {
-//     height: '200px',
-//     border: '5px solid pink'
-// };
-export class AddSection extends React.Component {
-    constructor(props) {
-        super(props);
-        // since you're using this method in a callback, don't forget to
-        // bind the this context
-        this.ExpandBox = this.ExpandBox.bind(this);
-        this.state = {
-            notClickedYet: true,
-            Clicked: false
-        };
-    }
-    DottedBox = (props) => (
-        <div className="DottedBox">
-          <p className="DottedBox_content">Get started with CSS styling</p>
-        </div>
-      );
-    // ClickedOnAdd () {
-    //     <div 
-            
+class AddSection extends React.Component {
+    // constructor(props) {
+    //     super(props);
+    //     // since you're using this method in a callback, don't forget to
+    //     // bind the this context
+    //     this.ExpandBox = this.ExpandBox.bind(this);
+    //     this.state = {
+    //         notClickedYet: true
+    //     };
     // }
-   
+    state = {
+        notClickedYet: true
+    }
 
-    ExpandBox() {
-        if(this.notClickedYet === true){
-            this.setState({
-                notClickedYet: false,
-                Clicked: true
-            })
-        }else{
-            this.setState({
-                notClickedYet: true,
-                Clicked: false
-            })
+    ExpandBox = () => {
+        if(!this.state.notClickedYet){
+            this.setState({ notClickedYet: true });
+            console.log(this.state.notClickedYet);
+            const addBox = {
+                height: '300px',
+                border: '5px solid pink'
+              };
+           return  <article className = "add-box" style={addBox}>
+            {/* {{height: "200px"}}>*/}</article>
+        } else{
+            this.setState({ notClickedYet: false });
+            console.log(this.state.notClickedYet);
         }
-        
-        // const divStyle = {
-        //     margin: '40px',
-        //     border: '5px solid pink'
-        // };
+
+    } 
+
+    render() {
         return (
-            <div onClick={() => this.DottedBox()}>
+            <article className="add-box" onClick={this.ExpandBox}>
+            ADD BOX
+            
 
-                {console.log("Testing")}
-    
-    
-    
-            </div>
+
+            {/* // add item area */}
+
+            {/* click to expand the flex container */}
+
+        </article>
         )
-    };
-
-    render(){
         
-        return (
-            <div onClick = {this.ExpandBox()}>
-                
-
-            </div>
-        )
     }
 
 }
        
-
-
-
-
-
-
-// export default AddSection;
+export default AddSection;
