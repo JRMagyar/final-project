@@ -51,7 +51,7 @@ class AddSection extends React.Component {
         // and if clicked again the in the form will be hidden until next btn click and so forth
         //UPDATE: We have to get another button if we want to add another input and keeps going and going.
         return (
-            <div className="formDiv" style={{ backgroundColor: "rgb(126, 240, 240)", height: "30%", height: this.state.notClickedYet ? "35%" : "60%" }}>
+            <div className="formDiv" style={{ backgroundColor: "rgb(126, 240, 240)", height: "35%", height: this.state.notClickedYet ? "35%" : "60%" }}>
             <button onClick={this.ExpandBox}>ADD STUFF</button>
             <article className="add-box" style={{ backgroundColor: "rgb(126, 240, 240)", height: "35%" }}>
             
