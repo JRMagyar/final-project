@@ -19,7 +19,9 @@ function Expenses(props) {
                                 area for calendar
                                 
                         </article>
-                        <AddSection/>
+                        
+                        <AddSection/>  {/*-->below comment is the same in the class AddSection render */}
+                        
                             {/* <article className="add-box">
                                 ADD BOX
                                 {/* // add item area */}
