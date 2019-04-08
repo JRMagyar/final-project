@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import ReactDOM from "react-dom";
+//import ReactDOM from "react-dom";
 
 class AddSection extends React.Component {
     constructor(props) {
@@ -55,7 +55,7 @@ class AddSection extends React.Component {
             <article className="add-box" style={{ backgroundColor: "rgb(126, 240, 240)", height: "35%" }}>
             
             </article>
-                <form className="add-form" onSubmit={this.handleSubmit} style={{ visibility: this.state.notClickedYet ? "hidden" : "visible", color: "black"}}>
+        <form className="add-form" onSubmit={this.handleSubmit} style={{ border: "double", visibility: this.state.notClickedYet ? "hidden" : "visible", color: "black"}}>
                     <label>
                         Add an Expense:
                             <input type="text" value={this.state.value}/>
