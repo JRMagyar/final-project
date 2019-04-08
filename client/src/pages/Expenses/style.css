@@ -15,7 +15,11 @@
     height: 65%;
 }
 
-.add-box {
-    background-color: rgb(126, 240, 240);
-    height: 35%;
+.AddBtnForExpense{
+    background: rgb(126, 240, 240);
+    font-size: 15px;
 }
+/* .add-box {
+    background-color: rgb(126, 240, 240);
+    /* height: 35%; 
+} */
