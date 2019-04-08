@@ -1,11 +1,84 @@
-* {
+/* ------------- background animation ------------- */
+
+.hero-bkg-animated {
+    background: #00b377 url("../../imgs/geometryBB.png") repeat 0 0;
+    width: 100%;
+    margin: 0;
     text-align: center;
+    height: 100vh;
+    box-sizing: border-box;
+    -webkit-animation: slide 20s linear infinite;
 }
 
-.title-area {
-    height: 30%;
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+
+/* ------------- generic ------------- */
+
+* {
+    text-align: center;
+    /* width: inherit; */
+}
+
+.title {
+    width: 100%;
 }
 
 .login-area {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-content: center;
     background-color: white;
+    height: 70vh;
+    width: 50%;
+    overflow: hidden;
+}
+
+.abcRioButtonBlue {
+    margin: auto;
+}
+
+/* ------------- form ------------- */
+
+.signin-form {
+    margin: auto;
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+    width: 80%;
+}
+
+input {
+    text-align: left;
+    font-size: 16pt;
+    width: 100%;
+    padding: 10pt;
+    margin: 10pt 0pt;
+    box-sizing : border-box;
+    border: none;
+    border-bottom: 1pt solid rgb(207, 207, 207);
+}
+
+input:focus, input:hover {
+    transition: 250ms;
+    outline-color: #00b377;
+    color: #00b377;
+    border-bottom: 1pt solid #00b377;
+}
+
+input[type=submit] {
+    text-align: center;
+    background-color: #00b377;
+    color: white;
+    font-size: 16pt;
+    border: none;
+}
+
+input[type=submit]:hover {
+    transition: 500ms;
+    cursor: pointer;
+    background-color: #008558;
 }

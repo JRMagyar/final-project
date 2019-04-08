@@ -21,7 +21,7 @@ class Nav extends React.Component {
         return (
             <div>
                 <nav className="main-nav">
-                    <a className="nav-brand" href="/">
+                    <a className="nav-brand" href="/dashboard">
                         Uncle
                     </a>
                     <button className="nav-button-open" onClick={this.handleModal}>
@@ -34,6 +34,7 @@ class Nav extends React.Component {
                             return <div className="nav-modal" style={{display: this.state.display ? 'flex' : 'none' }}>
                                 <span className="nav-button-closed" onClick={this.handleModal}>&times;</span>
                                 <a href="#" onClick="signOut();">Sign out</a>
+                                <a href="/" onClick="signOut();">Sign out</a>
                                 <a href="/dashboard">dashboard</a>
                                 <a href="/expenses">expenses</a>
                             </div>
@@ -41,6 +42,7 @@ class Nav extends React.Component {
                             return <div className="nav-modal-mobile" style={{display: this.state.display ? 'flex' : 'none' }}>
                                 <span className="nav-button-closed" onClick={this.handleModal}>&times;</span>
                                 <a href="#" onClick="signOut();">Sign out</a>
+                                <a href="/" onClick="signOut();">Sign out</a>
                                 <a href="/dashboard">dashboard</a>
                                 <a href="/expenses">expenses</a>
                             </div>

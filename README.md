@@ -7,9 +7,11 @@ The app will tie into your Google account which will set calendar reminders to a
 Set goals for your family and remember to treat yourself when a goal is met.
 
 ## New Techs Planned to be used
+- NPM React-Responsive
+- Passport.js
+- fullcalendar.io
 - Google Sign In
 - Google Calendar API
-- React-Responsive
 
 ## Database Type
 - Mongo / Mongoose
