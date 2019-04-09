@@ -45,32 +45,33 @@ class AddSection extends React.Component {
         }
 
     }
-
+    
     render() {
         //if the button is clicked than the form will be visible in formDiv
         // and if clicked again the in the form will be hidden until next btn click and so forth
+        //UPDATE: We have to get another button if we want to add another input and keeps going and going.
         return (
-            <div className="formDiv" style={{ backgroundColor: "rgb(126, 240, 240)", height: "35%", height: this.state.notClickedYet ? "35%" : "90%" }}>
+            <div className="formDiv" style={{ backgroundColor: "rgb(126, 240, 240)", height: "35%", height: this.state.notClickedYet ? "35%" : "60%" }}>
             <button onClick={this.ExpandBox}>ADD STUFF</button>
             <article className="add-box" style={{ backgroundColor: "rgb(126, 240, 240)", height: "35%" }}>
             
             </article>
-        <form className="add-form" onSubmit={this.handleSubmit} style={{ border: "double", visibility: this.state.notClickedYet ? "hidden" : "visible", color: "black"}}>
+        <form className="add-form" onSubmit={this.handleSubmit} style={{ border: "double", visibility: this.state.notClickedYet ? "hidden" : "visible", color: "black", backgroundColor: "rgb(126, 240, 240)"}}>
                     <label>
+                        Add an Expense:
+                            <input type="text" value={this.state.value} style={{width : "80%"}}/>
+                    </label>
+                    {/* <label>
                         Add an Expense:
                             <input type="text" value={this.state.value}/>
                     </label>
                     <label>
                         Add an Expense:
                             <input type="text" value={this.state.value}/>
-                    </label>
-                    <label>
-                        Add an Expense:
-                            <input type="text" value={this.state.value}/>
-                    </label>
-                    <input type="submit" value="Submit" />
+                    </label>*/}
+                    <input type="submit" value="Submit" style={{width : "70%"}} />
                 </form>
-             
+                {/* <button>Add another expense?</button> */}
             </div>
         );
 
