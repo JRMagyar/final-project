@@ -45,17 +45,3 @@ class App extends Component {
   }
   
 export default App;
-
-    /*return (
-        <Router>
-          <div id="root">
-            <Nav />
-            <Switch>
-              <Route exact path="/" component={Login} />
-              <Route exact path="/dashboard" component={Dashboard} />
-              <Route exact path="/expenses" component={Expenses} />
-              <Route exact path="/finances" component={Finances} />
-            </Switch>
-          </div>
-        </Router>
-      );*/
