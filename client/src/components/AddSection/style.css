@@ -1,8 +1,27 @@
-/* .add-form {
-    background-color: rgb(126, 240, 240);
-    border-color: rgb(126, 240, 240);
-    border: 100%  black;
+.add-form {
+    background-color: rgb(215, 203, 72);
+    margin: auto;
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+    width: 100%;
+    /* padding: 10pt; */
 }
-input{
-    border: 100% double black;
-} */
+.add-form input{
+    width: 90%;
+}
+.add-form select{
+    margin: 10px;
+    font-size: 15px;
+}
+.add-form textarea{
+    width: 80%;
+    height: 80%;
+    margin: 10px;
+}
+
+.formDiv button {
+    width: 50%;
+    height: 40%;
+    margin: 10%;
+    font-size: 100%;
+}
