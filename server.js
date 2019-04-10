@@ -19,8 +19,56 @@ if (process.env.NODE_ENV === "production") {
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fptesting");
 
+/*  PASSPORT SETUP  */
+
+const passport = require('passport');
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get('/success', (req, res) => res.send("Welcome "+req.query.username+"!!"));
+app.get('/error', (req, res) => res.send("error logging in"));
+
+passport.serializeUser(function(user, cb) {
+  cb(null, user.id);
+});
+
+passport.deserializeUser(function(id, cb) {
+  User.findById(id, function(err, user) {
+    cb(err, user);
+  });
+});
+
+const LocalStrategy = require('passport-local').Strategy;
+
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+        User.findOne({
+            username: username
+        }, function(err, user) {
+            if (err) {
+            return done(err);
+            }
+
+            if (!user) {
+            return done(null, false);
+            }
+
+            if (user.password != password) {
+            return done(null, false);
+            }
+            return done(null, user);
+        });
+    }
+));
+
+app.post('/',
+    passport.authenticate('local', { failureRedirect: '/error' }),
+    function(req, res) {
+    res.redirect('/success?username='+req.user.username);
+});
+
 /////TESTING ROUTES/////
-app.get("/newHousehold/:name", function(req, res){
+/*app.get("/newHousehold/:name", function(req, res){
     let household = {}
     household.name = req.params.name
     db.Household.create(household)
@@ -85,10 +133,9 @@ app.get("/displayAll/:id", function(req,res){
     .catch(function(err){
         console.log(err)
     })
-})
+})*/
 //////////////////////////////////
 
 app.listen(PORT, function() {
     console.log("App running on port " + PORT);
 });
-
