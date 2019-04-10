@@ -45,13 +45,15 @@ class AddSection extends React.Component {
             <button onClick={this.ExpandBox}>ADD STUFF</button>
             {/* <article className="add-box" style={{ backgroundColor: "rgb(126, 240, 240)", height: "35%" }}>
             </article> */}
-                <form className="add-form" onSubmit={this.handleSubmit} style={{ border: "double", visibility: this.state.notClickedYet ? "hidden" : "visible", color: "black", backgroundColor: "rgb(126, 240, 240)"}}>
+                <form className="add-form" onSubmit={this.handleSubmit} style={{visibility: this.state.notClickedYet ? "hidden" : "visible"}}>
                     <input type="text" name="exp-name" placeholder="enter expense"/>
                     <input type="number" name="exp-amount" placeholder="expense amount"/>
                     <input type="text" name="exp-category" placeholder="select category"/>
                     <select name="exp-recur">
-                        <option value="true">yes</option>
-                        <option value="false">no</option>
+                        
+                        <option label="yes" value="true">yes</option> 
+                        <option label="no" value="false">no</option> 
+                        
                     </select>
                     <select name="exp-freq">
                         <option value="monthly">monthly</option>
