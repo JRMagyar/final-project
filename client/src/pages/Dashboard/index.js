@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import MediaQuery from 'react-responsive';
+import Calendar from "../../components/Calendar/index";
 import { FlexRow, FlexCol } from "../../components/FlexWrap/index";
 
 function Dashboard(props){
@@ -13,7 +14,7 @@ function Dashboard(props){
                         Dashboard{/* {props.pagename} */}
                     </article>
                     <article className="flex-child left-child">
-                        area for calendar
+                        <Calendar ></Calendar>
                     </article>
                     <article className="flex-child right-child">
                         notification list
@@ -25,7 +26,7 @@ function Dashboard(props){
                         Dashboard{/* {props.pagename} */}
                     </article>
                     <article className="calendarM">
-                        area for calendar
+                        <Calendar></Calendar>
                     </article>
                     <article className="note-listM">
                         notification list
