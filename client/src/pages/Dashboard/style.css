@@ -11,6 +11,7 @@
     background-color: lightgray;
     height: 70vh;
     flex: 2;
+    overflow: auto;
 }
 
 .right-child {

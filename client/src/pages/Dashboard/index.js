@@ -14,7 +14,7 @@ function Dashboard(props){
                         Dashboard{/* {props.pagename} */}
                     </article>
                     <article className="flex-child left-child">
-                        <Calendar></Calendar>
+                        <Calendar ></Calendar>
                     </article>
                     <article className="flex-child right-child">
                         notification list
@@ -26,7 +26,7 @@ function Dashboard(props){
                         Dashboard{/* {props.pagename} */}
                     </article>
                     <article className="calendarM">
-                        area for calendar
+                        <Calendar></Calendar>
                     </article>
                     <article className="note-listM">
                         notification list

@@ -8,9 +8,10 @@ export default class DemoApp extends React.Component {
 
   render() {
     return (
-      <FullCalendar 
+      <FullCalendar
         showNonCurrentDates={false} 
-        height={530} 
+        // height={530} 
+        
         fixedWeekCount={false}
         defaultView="dayGridMonth" 
         plugins={[ dayGridPlugin ]} />
