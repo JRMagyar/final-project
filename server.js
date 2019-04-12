@@ -1,6 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
+const householdCon = require("./controllers/householdController")
+const ScheduleCon = require("./controllers/scheduleController")
+
 const PORT = process.env.PORT || 3001;
 
 const db = require("./models");
@@ -85,6 +88,13 @@ app.get("/displayAll/:id", function(req,res){
     .catch(function(err){
         console.log(err)
     })
+})
+app.post("/newSchedule/:id", function(req, res){
+    ScheduleCon.create(req, res);
+});
+
+app.get("/allSchedule/:id", function(req, res){
+    ScheduleCon.findAll(req, res);
 })
 //////////////////////////////////
 
