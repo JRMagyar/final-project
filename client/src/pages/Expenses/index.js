@@ -3,14 +3,16 @@ import "./style.css";
 import MediaQuery from 'react-responsive';
 import { FlexRow, FlexCol } from "../../components/FlexWrap/index";
 import AddSection from "../../components/AddSection/index";
-
+import Nav from "../../components/NavBar/index";
 
 function Expenses(props) {
     return (
         <MediaQuery minDeviceWidth={700}>
             {(matches) => {
                 if (matches) {
-                    return <FlexRow>
+                    return  <div>
+                    <Nav />
+                    <FlexRow>
                         <article className="flex-child title-area">
                             expenses title{/* {props.pagename} */}
                         </article>
@@ -35,8 +37,11 @@ function Expenses(props) {
                             expenses list (quick view / expand view / update & delete)
                     </article>
                     </FlexRow>
+                    </div>
                 } else {
-                    return <FlexCol>
+                    return <div>
+                    <Nav />
+                    <FlexCol>
                         <article className="title-areaM">
                             expenses title{/* {props.pagename} */}
                         </article>
@@ -47,6 +52,7 @@ function Expenses(props) {
                             expenses list
                     </article>
                     </FlexCol>
+                    </div>
                 }
             }}
         </MediaQuery>
