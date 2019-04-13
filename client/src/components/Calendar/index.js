@@ -50,7 +50,9 @@ export default class Calendar extends React.Component {
       {
         for(let i=0; i < res.data.length; i++){
           let schedule = this.state.events
-          schedule.push(res.data[i].calendar)
+          let data = res.data[i].calendar
+          data.backgroundColor = "#800000"
+          schedule.push(data)
           this.setState({events: schedule})
         }
       })
