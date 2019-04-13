@@ -1,22 +1,26 @@
 import React from "react";
 import { FlexCol } from "../../components/FlexWrap/index";
 import "./style.css"
-import Axios from "axios";
+import axios from "axios";
 
 
 class Login extends React.Component {
 
     state = {
-        redirectToRef: false
+        isAuth: false,
+        loggedIn: false
     }
 
     login = (evn) => {
         evn.preventDefault();
         console.log("get the user info from db");
-        Axios.get('/users/')
+        axios.get('/api/users')
             .then(function (response) {
             console.log(response);
         })
+        if(this.state.isAuth){
+
+        }
     }
 
     render(){
