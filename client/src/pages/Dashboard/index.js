@@ -26,7 +26,7 @@ function Dashboard(props) {
                                     <article className="flex-child right-child">
                                         <span className="custom-underline"> Notification List</span>
                          
-                                        <ListPlugin />
+                                        {/* <ListPlugin /> */}
 
                                     </article>
                                 </FlexRow>
