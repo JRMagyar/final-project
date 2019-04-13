@@ -10,17 +10,11 @@ function Expenses(props) {
         <MediaQuery minDeviceWidth={700}>
             {(matches) => {
                 if (matches) {
-<<<<<<< HEAD
-                    return <FlexRow>
-                        <article className="flex-child title-area custom-underline">
-                            Expenses{/* {props.pagename} */}
-=======
                     return  <div>
                     <Nav />
                     <FlexRow>
                         <article className="flex-child title-area">
                             expenses title{/* {props.pagename} */}
->>>>>>> b27213ae3967ce3261ab2697e2bd91d18d7b34e8
                         </article>
                         <div className="flex-child left-child-p">
                             <article className="calendar-area-mini custom-underline">
@@ -45,17 +39,11 @@ function Expenses(props) {
                     </FlexRow>
                     </div>
                 } else {
-<<<<<<< HEAD
-                    return <FlexCol>
-                        <article className="title-areaM custom-underline">
-                            Expenses {/* {props.pagename} */}
-=======
                     return <div>
                     <Nav />
                     <FlexCol>
                         <article className="title-areaM">
                             expenses title{/* {props.pagename} */}
->>>>>>> b27213ae3967ce3261ab2697e2bd91d18d7b34e8
                         </article>
                         <article className="calendarM custom-underline">
                             area for calendar / click to add
