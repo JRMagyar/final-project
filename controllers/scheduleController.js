@@ -4,7 +4,7 @@ module.exports = {
     findAll: function(req, res){
         db.Household
         .findOne({_id: req.params.id})
-        .populate("schedules")
+        .populate({path: "schedules", select: "calendar"})
         .then(dbResults => res.json(dbResults.schedules))
         .catch(err => res.json(err));
     },

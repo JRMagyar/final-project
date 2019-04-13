@@ -10,44 +10,50 @@ export default class Calendar extends React.Component {
     testEvents : [
       {allDay: true,
       start: "2019-04-12",
-      title: "Test Event 01"
+      title: "Test Event 01",
+      url: "https://mongoosejs.com/docs/populate.html"
     },
     {allDay: false,
     start: "2019-04-14T13:30:00",
     title: "Test Event 02"}
-  ]
+  ],
+  events: []
 }
   componentDidMount(){
-    this.buildSchedule();
-    // console.log(this.state.events)
+    // this.buildSchedule();
+    this.loadSchedule();
   }
   
-  // loadSchedule(){
+  // buildSchedule(){
   //   this.getSchedule("5cafbbab08fb442350951b1f")
-  //   .then(res => this.setState({events: res.data},function(){
-  //     console.log(this.state.events)
-  //   }))
-  //   .catch(err => console.log(err))
+  //   .then(res =>
+  //     {
+  //       console.log(res.data)
+  //       var schedule =[]
+        
+  //       for(let i = 0; i < res.data.length; i++){
+  //         let event = {}
+  //         event.title = res.data[i].title
+  //         event.start = res.data[i].start
+  //         event.allDay = res.data[i].allDay
+  //         schedule.push(event)
+  //       }
+  //       this.setState({events: schedule})
+  //       console.log(this.state.events)
+  //     }
+  //   )
+
   // }
-  buildSchedule(){
-    this.getSchedule("5cafbbab08fb442350951b1f")
+  loadSchedule(){
+    this.getSchedule("5cb1eb274ef1b30d2c9ed094")
     .then(res =>
       {
-        console.log(res.data)
-        var schedule =[]
-        
-        for(let i = 0; i < res.data.length; i++){
-          let event = {}
-          event.title = res.data[i].title
-          event.start = res.data[i].start
-          event.allDay = res.data[i].allDay
-          schedule.push(event)
+        for(let i=0; i < res.data.length; i++){
+          let schedule = this.state.events
+          schedule.push(res.data[i].calendar)
+          this.setState({events: schedule})
         }
-        this.setState({events: schedule})
-        console.log(this.state.events)
-      }
-    )
-
+      })
   }
   getSchedule = id => {
     return axios.get("/allSchedule/" + id);
@@ -59,7 +65,7 @@ export default class Calendar extends React.Component {
       <FullCalendar
         showNonCurrentDates={false} 
         // height={530} 
-        events={this.state.testEvents}
+        events={this.state.events}
         
         fixedWeekCount={false}
         defaultView="dayGridMonth" 
