@@ -38,6 +38,18 @@
     overflow: hidden;
 }
 
+.login-areaM {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+}
+
 .abcRioButtonBlue {
     margin: auto;
 }
