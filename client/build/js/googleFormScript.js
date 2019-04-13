@@ -1,4 +1,4 @@
-//alert("google form script has loaded");
+// //alert("google form script has loaded");
 
 // function onSignIn(googleUser) {
 //   // Useful data for your client-side scripts:

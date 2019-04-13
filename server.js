@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const db = require("./models"); //probably should comment this out??
 
+const userCon = require("./controllers/userController")
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -140,6 +141,17 @@ app.get("/displayAll/:id", function(req,res){
     .catch(function(err){
         console.log(err)
     })
+})
+app.post("/newSchedule/:id", function(req, res){
+    ScheduleCon.create(req, res);
+});
+
+app.get("/allSchedule/:id", function(req, res){
+    ScheduleCon.findAll(req, res);
+})
+
+app.post("/newUser/:id", function(req, res){
+    userCon.create(req, res);
 })
 //////////////////////////////////
 

@@ -18,7 +18,7 @@ module.exports = {
         db.User
         .create(req.body)
         .then(newUser => {
-            return db.Household.findOneAndUpdate({_id: req.params.id}, {$push:{User: newUser._id}}, {new: true})
+            return db.Household.findOneAndUpdate({_id: req.params.id}, {$push:{users: newUser._id}}, {new: true})
         })
         .catch(err => res.json(err));
     },

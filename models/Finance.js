@@ -14,13 +14,15 @@ const FinanceSchema = new Schema({
         type: Number,
         required: true
     },
-    recurring : {
-        type: Boolean,
-        required: true
-    },
-    frequency: {
-        type: String,
-        required: false
+    calendar: {
+        title: {
+            type: String,
+            required: true
+        },
+        start:{ //yyyy-mm-ddThh:mm:ss 24hr clock
+            type: String,
+            required: true
+        }
     }
 })
 
