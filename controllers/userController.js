@@ -28,10 +28,16 @@ module.exports = {
         .then(dbUser => res.json(dbUser))
         .catch(err => err);
     },
-    delete: function(req, res){
+    remove: function(req, res){
         db.User
         .findByID({_id: req.params.id})
         .then(dbUser => dbUser.remove())
         .catc(err => res.json(err));
+    },
+    loginFind: function(req, res){
+        db.Household
+        .find({User})
+        .then(allUsers => {console.log(allUsers); res.json(allUsers)})
+        .catch(err => res.json(err))
     }
 }
