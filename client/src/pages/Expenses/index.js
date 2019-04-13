@@ -11,11 +11,11 @@ function Expenses(props) {
             {(matches) => {
                 if (matches) {
                     return <FlexRow>
-                        <article className="flex-child title-area">
-                            expenses title{/* {props.pagename} */}
+                        <article className="flex-child title-area custom-underline">
+                            Expenses{/* {props.pagename} */}
                         </article>
                         <div className="flex-child left-child-p">
-                            <article className="calendar-area-mini">
+                            <article className="calendar-area-mini custom-underline">
                                 area for calendar
                                 
                         </article>
@@ -31,20 +31,20 @@ function Expenses(props) {
                             </article> */}
 
                         </div>
-                        <article className="flex-child right-child-p">
-                            expenses list (quick view / expand view / update & delete)
+                        <article className="flex-child right-child-p custom-underline">
+                            Expenses List (quick view / expand view / update & delete)
                     </article>
                     </FlexRow>
                 } else {
                     return <FlexCol>
-                        <article className="title-areaM">
-                            expenses title{/* {props.pagename} */}
+                        <article className="title-areaM custom-underline">
+                            Expenses {/* {props.pagename} */}
                         </article>
-                        <article className="calendarM">
+                        <article className="calendarM custom-underline">
                             area for calendar / click to add
                     </article>
-                        <article className="note-listM">
-                            expenses list
+                        <article className="note-listM custom-underline">
+                            Expenses List
                     </article>
                     </FlexCol>
                 }

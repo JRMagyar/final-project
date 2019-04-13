@@ -19,6 +19,33 @@
     background: rgb(126, 240, 240);
     font-size: 15px;
 }
+.custom-underline
+{
+text-decoration:none;
+display: inline-block;
+color:black;
+}
+/* add a empty string after the elment with class .slide-center-out  */
+.custom-underline:after 
+{
+content: '';
+display: block;
+height: 3px;
+width: 0;
+background: transparent;
+transition: width .5s ease, background-color .5s ease;
+-webkit-transition: width .5s ease, background-color .5s ease;
+-moz-transition: width .5s ease, background-color .5s ease;
+ 
+margin:auto; /* center the cotent so it will sliding from the midddle to the left and right */
+}
+ 
+/* Change the width and background on hover, aka sliding from the middle to the left and right */
+.custom-underline:hover:after 
+{
+width: 100%;
+background: black;
+}
 /* .add-box {
     background-color: rgb(126, 240, 240);
     /* height: 35%; 

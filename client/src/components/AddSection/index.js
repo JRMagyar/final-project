@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
-//import ReactDOM from "react-dom";
+//import ReactDOM from "react-dom";\
+//import ValGoesToCalender, {addEvent} from "../../components/ValGoesToCalender/index"
 
 class AddSection extends React.Component {
     constructor(props) {
