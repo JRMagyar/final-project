@@ -13,9 +13,9 @@ class Login extends React.Component {
     login = (evn) => {
         evn.preventDefault();
         console.log("get the user info from db");
-        Axios.get('/users')
+        Axios.get('/users/')
             .then(function (response) {
-            console.log(response.data);
+            console.log(response);
         })
     }
 
