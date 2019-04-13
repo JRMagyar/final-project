@@ -1,14 +1,11 @@
 const express = require("express");
+
 const mongoose = require("mongoose");
-
-const householdCon = require("./controllers/householdController")
-const ScheduleCon = require("./controllers/scheduleController")
-
+const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
-
-const db = require("./models");
-
 const app = express();
+const db = require("./models"); //probably should comment this out??
+
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -17,10 +14,57 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Add routes, both API and view
-// app.use(routes);
+app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fptesting");
+
+/*  PASSPORT SETUP  */
+const passport = require('passport');
+app.use(passport.initialize());
+app.use(passport.session());
+app.get('/success', (req, res) => res.send("Welcome "+req.query.username+"!!"));
+app.get('/error', (req, res) => res.send("error logging in"));
+
+passport.serializeUser(function(user, cb) {
+  cb(null, user.id);
+});
+
+passport.deserializeUser(function(id, cb) {
+  User.findById(id, function(err, user) {
+    cb(err, user);
+  });
+});
+
+/*  PASSPORT LOCAL STRATEGY  */
+const LocalStrategy = require('passport-local').Strategy;
+
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+        User.findOne({
+            username: username
+        }, function(err, user) {
+            if (err) {
+            return done(err);
+            }
+
+            if (!user) {
+            return done(null, false);
+            }
+
+            if (user.password != password) {
+            return done(null, false);
+            }
+            return done(null, user);
+        });
+    }
+));
+
+app.post('/',
+    passport.authenticate('local', { failureRedirect: '/error' }),
+    function(req, res) {
+    res.redirect('/success?username='+req.user.username);
+});
 
 /////TESTING ROUTES/////
 app.get("/newHousehold/:name", function(req, res){
@@ -34,6 +78,14 @@ app.get("/newHousehold/:name", function(req, res){
         .catch(function(err){
             console.log(err)
         })
+})
+
+app.get("/users", function(req, res){
+    db.User.find()
+    .then(function(results){
+        console.log(results);
+        res.json(results)
+    })
 })
 
 app.post("/newUser/:id", function(req, res){
@@ -99,6 +151,5 @@ app.get("/allSchedule/:id", function(req, res){
 //////////////////////////////////
 
 app.listen(PORT, function() {
-    console.log("App running on port " + PORT);
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
-

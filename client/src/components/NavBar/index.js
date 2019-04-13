@@ -33,7 +33,6 @@ class Nav extends React.Component {
                         if(matches){
                             return <div className="nav-modal" style={{display: this.state.display ? 'flex' : 'none' }}>
                                 <span className="nav-button-closed" onClick={this.handleModal}>&times;</span>
-                                <a href="#" onClick="signOut();">Sign out</a>
                                 <a href="/" onClick="signOut();">Sign out</a>
                                 <a href="/dashboard">dashboard</a>
                                 <a href="/expenses">expenses</a>
@@ -41,7 +40,6 @@ class Nav extends React.Component {
                         } else {
                             return <div className="nav-modal-mobile" style={{display: this.state.display ? 'flex' : 'none' }}>
                                 <span className="nav-button-closed" onClick={this.handleModal}>&times;</span>
-                                <a href="#" onClick="signOut();">Sign out</a>
                                 <a href="/" onClick="signOut();">Sign out</a>
                                 <a href="/dashboard">dashboard</a>
                                 <a href="/expenses">expenses</a>

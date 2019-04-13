@@ -10,7 +10,7 @@ import Calendar from "./components/Calendar/index";
 // import AddSection from "../../components/AddSection/index";
 
 const fakeAuth = {
-  isAuth: true,
+  isAuth: false,
   auth(cb) {
     this.isAuth = true;
     setTimeout(cb, 100) //fake async
@@ -30,6 +30,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 )
 
 class App extends Component {
+  
+
+  
   render() {
     return (
         <Router>
@@ -47,17 +50,3 @@ class App extends Component {
   }
   
 export default App;
-
-    /*return (
-        <Router>
-          <div id="root">
-            <Nav />
-            <Switch>
-              <Route exact path="/" component={Login} />
-              <Route exact path="/dashboard" component={Dashboard} />
-              <Route exact path="/expenses" component={Expenses} />
-              <Route exact path="/finances" component={Finances} />
-            </Switch>
-          </div>
-        </Router>
-      );*/
