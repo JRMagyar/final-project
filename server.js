@@ -1,11 +1,11 @@
 const express = require("express");
+
 const mongoose = require("mongoose");
-
+const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
-
-const db = require("./models");
-
 const app = express();
+const db = require("./models"); //probably should comment this out??
+
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -14,17 +14,15 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Add routes, both API and view
-// app.use(routes);
+app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fptesting");
 
 /*  PASSPORT SETUP  */
-
 const passport = require('passport');
 app.use(passport.initialize());
 app.use(passport.session());
-
 app.get('/success', (req, res) => res.send("Welcome "+req.query.username+"!!"));
 app.get('/error', (req, res) => res.send("error logging in"));
 
@@ -38,6 +36,7 @@ passport.deserializeUser(function(id, cb) {
   });
 });
 
+/*  PASSPORT LOCAL STRATEGY  */
 const LocalStrategy = require('passport-local').Strategy;
 
 passport.use(new LocalStrategy(
@@ -68,7 +67,7 @@ app.post('/',
 });
 
 /////TESTING ROUTES/////
-/*app.get("/newHousehold/:name", function(req, res){
+app.get("/newHousehold/:name", function(req, res){
     let household = {}
     household.name = req.params.name
     db.Household.create(household)
@@ -79,6 +78,14 @@ app.post('/',
         .catch(function(err){
             console.log(err)
         })
+})
+
+app.get("/users", function(req, res){
+    db.User.find()
+    .then(function(results){
+        console.log(results);
+        res.json(results)
+    })
 })
 
 app.post("/newUser/:id", function(req, res){
@@ -133,9 +140,9 @@ app.get("/displayAll/:id", function(req,res){
     .catch(function(err){
         console.log(err)
     })
-})*/
+})
 //////////////////////////////////
 
 app.listen(PORT, function() {
-    console.log("App running on port " + PORT);
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
