@@ -5,17 +5,29 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fptesting");
 
 const householdSeed =
 {
-    _id: "demohh01",
+    _id : ObjectId("5cb22272faf92402403661c0"),
     name: "Demo Household",
-    users: ["demous01", "demous02"],
-    expenses: ["demoex01", "demoex02"],
-    finances: ["demofi01", "demofi02"],
-    schedules: ["demosc01", "demosc02"]
+    users : [ 
+        "5cb22273faf92402403661c3", 
+        "5cb22273faf92402403661c4"
+    ],
+    expenses : [ 
+        "5cb22271faf92402403661be", 
+        "5cb22271faf92402403661bf"
+    ],
+    finances : [ 
+        "5cb22272faf92402403661c1", 
+        "5cb22272faf92402403661c2"
+    ],
+    schedules : [ 
+        "5cb22273faf92402403661c5", 
+        "5cb22273faf92402403661c6"
+    ]
 }
 
 const expensesSeed = [
     {
-        _id: "demoex01",
+        _id : ObjectId("5cb22271faf92402403661be"),
         name: "Electric Bill",
         description: "Monthly electric bill",
         amount: 63,
@@ -25,7 +37,7 @@ const expensesSeed = [
         }
     },
     {
-        _id: "demoex02",
+        _id : ObjectId("5cb22271faf92402403661bf"),
         name: "Netflix",
         description: "Monthly netflix fee",
         amount: 10,
@@ -38,7 +50,7 @@ const expensesSeed = [
 
 const financeSeeds = [
     {
-        _id: "demofi01",
+        _id : ObjectId("5cb22272faf92402403661c1"),
         name: "Paycheck",
         description: "Biweekly paycheck",
         amount: 650,
@@ -48,7 +60,7 @@ const financeSeeds = [
         }
     },
     {
-        _id:"demofi02",
+        _id : ObjectId("5cb22272faf92402403661c2"),
         name: "Paycheck",
         description: "Biweekly paycheck",
         amount: 650,
@@ -61,14 +73,14 @@ const financeSeeds = [
 
 const userSeeds = [
     {
-        _id: "demous01",
+        _id : ObjectId("5cb22273faf92402403661c3"),
         username: "Admin",
         email: "Admin@example.com",
         password: "Admin",
         hhID: "demohh01"
     },
     {
-        _id: "demous02",
+        _id : ObjectId("5cb22273faf92402403661c4"),
         username: "Demo",
         email: "Demo@example.com",
         password: "Demo",
@@ -78,7 +90,7 @@ const userSeeds = [
 
 const scheduleSeeds = [
     {
-        _id: "demosc01",
+        _id : ObjectId("5cb22273faf92402403661c5"),
         calendar: {
             title: "Soccer Game",
             start: "2019-04-01T13:30:00",
@@ -86,7 +98,7 @@ const scheduleSeeds = [
         }
     },
     {
-        _id: "demosc",
+        _id : ObjectId("5cb22273faf92402403661c6"),
         calendar: {
             title: "Vacation",
             start: "2019-04-03",

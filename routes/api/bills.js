@@ -1,10 +1,9 @@
 const router = require("express").Router();
-//const booksController = require("../../controllers/booksController");
+const billCont = require("../../controllers/expenseController")
 
 // Matches with "/api/books"
-router.route("/bills")
-//   .get(booksController.findAll)
-//   .post(booksController.create); //until the controller is ALIVE
+router.route("/all/:id")
+.get(billCont.findAllCal)
 
 // Matches with "/api/books/:id"
 router

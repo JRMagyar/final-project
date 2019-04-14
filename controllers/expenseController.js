@@ -2,8 +2,8 @@ const db = require("../models");
 
 module.exports = {
     findAll: function(req, res){
-        db.Household.
-        findOne({_id: req.params.id})
+        db.Household
+        .findOne({_id: req.params.id})
         .populate("expenses")
         .then(dbResults => res.json(dbResults))
         .catch(err => res.json(err));
@@ -33,5 +33,12 @@ module.exports = {
         .findByID({_id: req.params.id})
         .then(dbExpense => dbExpense.remove())
         .catc(err => res.json(err));
+    },
+    findAllCal: function(req, res){
+        db.Household
+        .findOne({_id: req.params.id})
+        .populate({path: "expenses", select: "calendar"})
+        .then(dbResults => res.json(dbResults.expenses))
+        .catch(err => res.json(err));
     }
 }
