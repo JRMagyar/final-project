@@ -1,10 +1,10 @@
 const router = require("express").Router();
 //const booksController = require("../../controllers/booksController");
+const ScheduleCont = require("../../controllers/scheduleController")
 
 // Matches with "/api/books"
-router.route("/schedules")
-//   .get(booksController.findAll)
-//   .post(booksController.create); //until the controller is ALIVE
+router.route("/all/:id")
+  .get(ScheduleCont.findAllCal)
 
 // Matches with "/api/books/:id"
 router

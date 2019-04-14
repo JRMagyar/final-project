@@ -4,7 +4,7 @@ module.exports = {
     findAll: function(req, res){
         db.Household
         .findOne({_id: req.params.id})
-        .populate({path: "schedules", select: "calendar"})
+        .populate("schedules")
         .then(dbResults => res.json(dbResults.schedules))
         .catch(err => res.json(err));
     },
@@ -34,5 +34,12 @@ module.exports = {
         .findByID({_id: req.params.id})
         .then(dbSchedule => dbSchedule.remove())
         .catc(err => res.json(err));
+    },
+    findAllCal: function(req, res){
+        db.Household
+        .findOne({_id: req.params.id})
+        .populate({path: "schedules", select: "calendar"})
+        .then(dbResults => res.json(dbResults.schedules))
+        .catch(err => res.json(err));
     }
 }

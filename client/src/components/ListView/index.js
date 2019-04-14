@@ -1,11 +1,12 @@
 import React from "react";
 import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
+import listPlugin from "@fullcalendar/list";
 import axios from "axios";
 
-import "./main.css"
+import "@fullcalendar/core/main.css"
+import "@fullcalendar/list/main.css"
 
-export default class Calendar extends React.Component {
+export default class ListView extends React.Component {
   state = {
     testEvents : [
       {allDay: true,
@@ -90,8 +91,8 @@ export default class Calendar extends React.Component {
         events={this.state.events}
         
         fixedWeekCount={false}
-        defaultView="dayGridMonth" 
-        plugins={[ dayGridPlugin ]} />
+        defaultView="listWeek" 
+        plugins={[ listPlugin ]} />
     )
   }
 

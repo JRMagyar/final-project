@@ -33,5 +33,12 @@ module.exports = {
         .findByID({_id: req.params.id})
         .then(dbFinance => dbFinance.remove())
         .catc(err => res.json(err));
+    },
+    findAllCal: function(req, res){
+        db.Household
+        .findOne({_id: req.params.id})
+        .populate({path: "finances", select: "calendar"})
+        .then(dbResults => res.json(dbResults.finances))
+        .catch(err => res.json(err));
     }
 }

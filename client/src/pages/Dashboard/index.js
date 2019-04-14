@@ -2,8 +2,10 @@ import React from "react";
 import "./style.css";
 import MediaQuery from 'react-responsive';
 import Calendar from "../../components/Calendar/index";
+import ListView from "../../components/ListView/index";
 import { FlexRow, FlexCol } from "../../components/FlexWrap/index";
 import Nav from "../../components/NavBar/index";
+
 
 function Dashboard(props){
     return (
@@ -20,7 +22,7 @@ function Dashboard(props){
                         <Calendar ></Calendar>
                     </article>
                     <article className="flex-child right-child">
-                        notification list
+                        <ListView></ListView>
                     </article>
                     </FlexRow>
                     </div>
@@ -35,7 +37,7 @@ function Dashboard(props){
                         <Calendar></Calendar>
                     </article>
                     <article className="note-listM">
-                        notification list
+                    <ListView></ListView>
                     </article>
                     </FlexCol>
                     </div>
