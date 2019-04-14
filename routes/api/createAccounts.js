@@ -2,7 +2,8 @@ const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
 router.route("/")
-   .get(userController.findAll)
+   //.get(userController.findAll)
+   .get(userController.loginFind)
    .post(userController.create); //until the controller is ALIVE
    
 router.route("/:id")

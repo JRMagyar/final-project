@@ -33,5 +33,11 @@ module.exports = {
         .findByID({_id: req.params.id})
         .then(dbUser => dbUser.remove())
         .catc(err => res.json(err));
+    },
+    loginFind: function(req, res){
+        db.Household
+        .find({User})
+        .then(allUsers => {console.log(allUsers); res.json(allUsers)})
+        .catch(err => res.json(err))
     }
 }
