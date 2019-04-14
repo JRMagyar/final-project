@@ -22,44 +22,64 @@ export default class Calendar extends React.Component {
   componentDidMount(){
     // this.buildSchedule();
     this.loadSchedule();
+    this.loadFinances();
+    this.loadExpenses();
   }
-  
-  // buildSchedule(){
-  //   this.getSchedule("5cafbbab08fb442350951b1f")
-  //   .then(res =>
-  //     {
-  //       console.log(res.data)
-  //       var schedule =[]
-        
-  //       for(let i = 0; i < res.data.length; i++){
-  //         let event = {}
-  //         event.title = res.data[i].title
-  //         event.start = res.data[i].start
-  //         event.allDay = res.data[i].allDay
-  //         schedule.push(event)
-  //       }
-  //       this.setState({events: schedule})
-  //       console.log(this.state.events)
-  //     }
-  //   )
 
-  // }
+  //load in schedule
   loadSchedule(){
-    this.getSchedule("5cb1eb274ef1b30d2c9ed094")
+    this.getSchedule("5cb22272faf92402403661c0")
     .then(res =>
       {
+        // console.log(res.data)
         for(let i=0; i < res.data.length; i++){
           let schedule = this.state.events
           let data = res.data[i].calendar
-          data.backgroundColor = "#800000"
+          data.backgroundColor = "#80aaff"
           schedule.push(data)
           this.setState({events: schedule})
         }
-      })
+    })
   }
   getSchedule = id => {
-    return axios.get("/allSchedule/" + id);
+    return axios.get("/api/schedules/all/" + id);
     
+  }
+  //load in finances
+  loadFinances(){
+    this.getFinances("5cb22272faf92402403661c0")
+    .then(res =>
+      {
+        // console.log(res.data)
+        for(let i=0; i < res.data.length; i++){
+          let schedule = this.state.events
+          let data = res.data[i].calendar
+          data.backgroundColor = "#00cc00"
+          schedule.push(data)
+          this.setState({events: schedule})
+        }
+    })
+  }
+  getFinances = id =>{
+    return axios.get("/api/finances/all/" + id);
+  }
+  //load in expenses
+  loadExpenses(){
+    this.getExpenses("5cb22272faf92402403661c0")
+    .then(res =>
+      {
+        console.log(res.data)
+        for(let i=0; i < res.data.length; i++){
+          let schedule = this.state.events
+          let data = res.data[i].calendar
+          data.backgroundColor = "#b30000"
+          schedule.push(data)
+          this.setState({events: schedule})
+        }
+    })
+  }
+  getExpenses = id => {
+    return axios.get("/api/bills/all/" + id)
   }
 
   render() {

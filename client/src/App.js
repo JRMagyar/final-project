@@ -10,7 +10,7 @@ import Calendar from "./components/Calendar/index";
 // import AddSection from "../../components/AddSection/index";
 
 const fakeAuth = {
-  isAuth: false,
+  isAuth: true,
   auth(cb) {
     this.isAuth = true;
     setTimeout(cb, 100) //fake async
