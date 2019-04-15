@@ -81,15 +81,19 @@ input:focus, input:hover {
     border-bottom: 1pt solid #00b377;
 }
 
-input[type=submit] {
+.signin-form a {
+    display: inline-block;
     text-align: center;
     background-color: #00b377;
     color: white;
     font-size: 16pt;
     border: none;
+    width: 100%;
+    padding: 10pt;
+    margin: 10pt 0pt;
 }
 
-input[type=submit]:hover {
+.signin-form button:hover {
     transition: 500ms;
     cursor: pointer;
     background-color: #008558;
