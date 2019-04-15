@@ -2,6 +2,7 @@ import React from "react";
 import FullCalendar from "@fullcalendar/react";
 import listPlugin from "@fullcalendar/list";
 import axios from "axios";
+//import {ListPlugin} from "./List/index.js";
 
 import "@fullcalendar/core/main.css"
 import "@fullcalendar/list/main.css"
@@ -36,7 +37,7 @@ export default class ListView extends React.Component {
         for(let i=0; i < res.data.length; i++){
           let schedule = this.state.events
           let data = res.data[i].calendar
-          data.backgroundColor = "#80aaff"
+         // data.backgroundColor = "#80aaff"
           schedule.push(data)
           this.setState({events: schedule})
         }
@@ -55,7 +56,7 @@ export default class ListView extends React.Component {
         for(let i=0; i < res.data.length; i++){
           let schedule = this.state.events
           let data = res.data[i].calendar
-          data.backgroundColor = "#00cc00"
+          //data.backgroundColor = "#00cc00"
           schedule.push(data)
           this.setState({events: schedule})
         }
@@ -73,7 +74,7 @@ export default class ListView extends React.Component {
         for(let i=0; i < res.data.length; i++){
           let schedule = this.state.events
           let data = res.data[i].calendar
-          data.backgroundColor = "#b30000"
+          //data.backgroundColor = "#b30000"
           schedule.push(data)
           this.setState({events: schedule})
         }
@@ -85,6 +86,7 @@ export default class ListView extends React.Component {
 
   render() {
     return (
+      <div>
       <FullCalendar
         showNonCurrentDates={false} 
         // height={530} 
@@ -92,7 +94,10 @@ export default class ListView extends React.Component {
         
         fixedWeekCount={false}
         defaultView="listWeek" 
-        plugins={[ listPlugin ]} />
+        plugins={[ listPlugin ]}/>
+        
+        {/* <ListPlugin allDay={this.state.props.allDay} start= {this.state.start} title= {this.state.title}/> */}
+        </div>
     )
   }
 
