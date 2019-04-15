@@ -44,7 +44,7 @@ class Login extends React.Component {
                                     <form className="signin-form">
                                         <input type="text" name="username" placeholder="enter username"/>
                                         <input type="password" name="password" autoComplete="on" placeholder="enter password"/>
-                                        <input type="submit" onClick={this.login} value="Login" />
+                                        <a href="/dashboard">login</a>
                                     </form>
                                     {/* <p>or</p>
                                     <article class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></article> */}
