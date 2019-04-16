@@ -4,6 +4,7 @@ import MediaQuery from 'react-responsive';
 import { FlexRow, FlexCol } from "../../components/FlexWrap/index";
 import AddSection from "../../components/AddSection/index";
 import Nav from "../../components/NavBar/index";
+import ExpenseList from "../../components/AddSection/addToList"
 
 function Expenses(props) {
     return (
@@ -35,6 +36,7 @@ function Expenses(props) {
                         </div>
                         <article className="flex-child right-child-p custom-underline">
                             Expenses List (quick view / expand view / update & delete)
+                            {/* <ExpenseList/> */}
                     </article>
                     </FlexRow>
                     </div>

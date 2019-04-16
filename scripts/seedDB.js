@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const db = require("../models");
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fptesting");
-
+const ObjectId = mongoose.Types.ObjectId;
+//mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fptesting");
+mongoose.connect("mongodb://localhost/fptesting");
 const householdSeed =
 {
     _id : ObjectId("5cb22272faf92402403661c0"),
