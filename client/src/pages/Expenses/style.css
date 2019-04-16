@@ -13,6 +13,7 @@
 .calendar-area-mini {
     background-color: rgb(202, 168, 168);
     height: 65%;
+    overflow: scroll;
 }
 
 .AddBtnForExpense{

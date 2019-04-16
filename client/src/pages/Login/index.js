@@ -38,7 +38,7 @@ class Login extends React.Component {
                                             welcome to uncle
                                         </h1>
                                         <p>
-                                            a friendly (but not to friendly) household management app
+                                            a friendly (but not too friendly) household management app
                                         </p>
                                     </div>
                                     <form className="signin-form">
