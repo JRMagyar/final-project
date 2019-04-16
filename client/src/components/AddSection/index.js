@@ -109,7 +109,8 @@ class AddSection extends React.Component {
                 console.log(res.data);
             })
         
-        <ExpenseList name={this.state.name} amount={this.state.amount} description={this.state.description} dueDate={this.state.start}   />
+        {<ExpenseList name={this.state.name} amount={this.state.amount} description={this.state.description} dueDate={this.state.start}   />}
+
           
         
     }

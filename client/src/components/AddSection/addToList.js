@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ExpenseList (props){
-    
+   
         return(
             <div>
                 <h3>Name: {props.name}</h3>
@@ -10,6 +10,7 @@ function ExpenseList (props){
                 <h3>Due Date: {props.calStart}</h3>
 
             </div>
+           
         )
     }
 export default ExpenseList
