@@ -4,6 +4,8 @@ import MediaQuery from 'react-responsive';
 import { FlexRow, FlexCol } from "../../components/FlexWrap/index";
 import AddSection from "../../components/AddSection/index";
 import Nav from "../../components/NavBar/index";
+import Calendar from "../../components/Calendar/index";
+import ListView from "../../components/ListView2/index";
 
 function Expenses(props) {
     return (
@@ -14,11 +16,11 @@ function Expenses(props) {
                     <Nav />
                     <FlexRow>
                         <article className="flex-child title-area">
-                            expenses title{/* {props.pagename} */}
+                            expenses{/* {props.pagename} */}
                         </article>
                         <div className="flex-child left-child-p">
                             <article className="calendar-area-mini">
-                                area for calendar
+                            <Calendar ></Calendar>
                                 
                         </article>
                         
@@ -34,7 +36,7 @@ function Expenses(props) {
 
                         </div>
                         <article className="flex-child right-child-p">
-                            expenses list (quick view / expand view / update & delete)
+                        <ListView></ListView>
                     </article>
                     </FlexRow>
                     </div>
@@ -43,13 +45,13 @@ function Expenses(props) {
                     <Nav />
                     <FlexCol>
                         <article className="title-areaM">
-                            expenses title{/* {props.pagename} */}
+                            expenses{/* {props.pagename} */}
                         </article>
                         <article className="calendarM">
-                            area for calendar / click to add
+                        <Calendar ></Calendar>
                     </article>
                         <article className="note-listM">
-                            expenses list
+                        <ListView></ListView>
                     </article>
                     </FlexCol>
                     </div>
